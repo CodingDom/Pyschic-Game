@@ -12,8 +12,29 @@
         <p>Losses: <span id="losses"></span></p>
         <p>Guesses remaining: <span id="remainder"></span></p>
         <p>The letters you have guessed: <span id="guesses"></span></p>
-        
+
         <script type='text/javascript'>
+            //Shortcut for grabbing my elements
+            function getElem(id) {
+                return document.getElementById(id);
+            }
+
+            //Formatting my game statistics and elements
+            var gameStats = {
+                wins: {value:0,text:getElem("wins")},
+                losses: {value:0,text:getElem("losses")},
+                remainder: {value:9,text:getElem("remainder")},
+                guesses: {value:"",text:getElem("guesses")},
+            };
+            
+            //Starts up a new round
+            function newRound() {
+                gameStats.remainder.value = 9;
+                gameStats.remanider.text.textContent = "9";
+                gameStats.guesses.value = "";
+                gameStats.guesses.text.textContent = "";
+            }
+            
             
         </script>
     </body>
